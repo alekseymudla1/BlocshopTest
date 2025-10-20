@@ -4,10 +4,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocshopTest.Web", "BlocshopTest.Web\BlocshopTest.Web.csproj", "{30D66A5B-9DC0-4F6A-8142-315DC6FD633C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CF5C9824-BCD7-4C8D-ABFE-E1AA362E71A9} = {CF5C9824-BCD7-4C8D-ABFE-E1AA362E71A9}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocshopTest.Domain", "BlocshopTest.Domain\BlocshopTest.Domain.csproj", "{CF5C9824-BCD7-4C8D-ABFE-E1AA362E71A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocshopTest.EF", "BlocshopTest.EF\BlocshopTest.EF.csproj", "{8EEC8FAA-0744-45E8-B4B9-3920F89DC067}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E28F2E39-77D2-4E84-AEEF-4C2AA529A4B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocshopTest.Domain.Tests", "BlocshopTest.Domain.Tests\BlocshopTest.Domain.Tests.csproj", "{C9AFC2A8-41E3-4DC1-AF75-EB41B2B01C6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +42,20 @@ Global
 		{8EEC8FAA-0744-45E8-B4B9-3920F89DC067}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EEC8FAA-0744-45E8-B4B9-3920F89DC067}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EEC8FAA-0744-45E8-B4B9-3920F89DC067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E28F2E39-77D2-4E84-AEEF-4C2AA529A4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E28F2E39-77D2-4E84-AEEF-4C2AA529A4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E28F2E39-77D2-4E84-AEEF-4C2AA529A4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E28F2E39-77D2-4E84-AEEF-4C2AA529A4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9AFC2A8-41E3-4DC1-AF75-EB41B2B01C6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9AFC2A8-41E3-4DC1-AF75-EB41B2B01C6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9AFC2A8-41E3-4DC1-AF75-EB41B2B01C6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9AFC2A8-41E3-4DC1-AF75-EB41B2B01C6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9AFC2A8-41E3-4DC1-AF75-EB41B2B01C6F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6C48720-9C58-4DDC-9C0C-9C7DD60D7173}
