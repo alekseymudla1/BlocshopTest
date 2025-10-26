@@ -14,5 +14,9 @@ public class EventsConfiguration : IEntityTypeConfiguration<Event>
         builder.Property(e => e.Date).IsRequired();
         builder.Property(e => e.CreatedAt).IsRequired();
         builder.Ignore(e => e.AvailableSeats);
+
+        builder
+            .Navigation(x => x.Reservations)
+            .AutoInclude();
     }
 }
