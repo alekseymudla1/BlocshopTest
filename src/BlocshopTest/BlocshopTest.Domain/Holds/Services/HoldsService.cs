@@ -45,4 +45,9 @@ public class HoldsService : IHoldsService
 
         return null;
     }
+
+    public async Task DeleteHold(Guid holdId)
+    {
+        await _holdsCache.DeleteHold(holdId);
+    }
 }

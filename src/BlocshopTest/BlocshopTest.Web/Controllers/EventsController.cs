@@ -91,6 +91,14 @@ public class EventsController : ControllerBase
             ConfirmationResult.Success => Ok(confirmationResult),
             ConfirmationResult.EventNotFound => NotFound("Event not found"),
             ConfirmationResult.HoldNotFound => NotFound("Hold not found"),
+            _ => BadRequest()
         };
+    }
+
+    [HttpDelete("{id:guid}/holds/{holdId:guid}")]
+    public async Task<IActionResult> CancelHold([FromRoute] Guid id, [FromRoute] Guid holdId)
+    {
+        await _holdsService.DeleteHold(holdId);
+        return Ok();
     }
 }
