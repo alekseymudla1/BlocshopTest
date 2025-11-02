@@ -5,6 +5,7 @@ using BlocshopTest.Domain.Holds.Models;
 using BlocshopTest.Domain.Holds.Services;
 using BlocshopTest.Web.Models.Events;
 using BlocshopTest.Web.Models.Holds;
+using BlocshopTest.Web.Models.Shared;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlocshopTest.Web.Controllers;
@@ -30,7 +31,7 @@ public class EventsController : ControllerBase
     public async Task<IActionResult> GetEventsPage([FromQuery] string search, [FromQuery] int? page, [FromQuery] int? pageSize)
     {
         var events = await _eventsService.GetEventsPage(search, page, pageSize);
-        var eventsDto = _mapper.Map<IEnumerable<EventSimpleDto>>(events);
+        var eventsDto = _mapper.Map<PageDto<EventSimpleDto>>(events);
         return Ok(eventsDto);
     }
 

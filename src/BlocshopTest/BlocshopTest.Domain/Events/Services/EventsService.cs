@@ -22,7 +22,7 @@ public class EventsService : IEventsService
         _pageSettings = pageSettingsOptions.Value;
     }
 
-    public async Task<IEnumerable<Event>> GetEventsPage(string search, int? page, int? pageSize)
+    public async Task<Page<Event>> GetEventsPage(string search, int? page, int? pageSize)
     {
         var filter = BuildSearchExpression(search);
         return await _eventsRepository.GetFilteredPageAsync(filter, page ?? _pageSettings.DefaultPage, pageSize ?? _pageSettings.DefaultPageSize);

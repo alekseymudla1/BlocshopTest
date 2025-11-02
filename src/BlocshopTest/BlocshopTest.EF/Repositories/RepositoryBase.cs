@@ -22,7 +22,7 @@ public abstract class RepositoryBase<TContext, TKey, TEntity>
         return await GetQuery().ToListAsync();
     }
 
-    public async Task<IEnumerable<TEntity>> GetFilteredPageAsync(Expression<Func<TEntity, bool>> filterExpression, int page = DEFAULT_PAGE, int pageSize = DEFAULT_PAGE_SIZE)
+    public async Task<Page<TEntity>> GetFilteredPageAsync(Expression<Func<TEntity, bool>> filterExpression, int page = DEFAULT_PAGE, int pageSize = DEFAULT_PAGE_SIZE)
     {
         if (pageSize > MAX_PAGE_SIZE)
         {
@@ -32,11 +32,25 @@ public abstract class RepositoryBase<TContext, TKey, TEntity>
         {
             page = DEFAULT_PAGE;
         }
-        return await GetQuery()
+
+        var totalItems = await GetQuery()
+            .Where(filterExpression)
+            .CountAsync();
+
+        var items = await GetQuery()
             .Where(filterExpression)
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
             .ToListAsync();
+
+        return new Page<TEntity>
+        {
+            Items = items,
+            PageNo = page,
+            PageSize = pageSize,
+            TotalItems = totalItems,
+            TotalPages = (int)Math.Ceiling((double)totalItems / pageSize)
+        };
     }
 
     public async Task<TEntity> GetByIdAsync(TKey id)
