@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocshopTest.Cache", "BlocshopTest.Cache\BlocshopTest.Cache.csproj", "{B1D71B3E-E1AD-43E1-A6E9-B531342918DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocshopTest.EF.Tests", "BlocshopTest.EF.Tests\BlocshopTest.EF.Tests.csproj", "{CC33C4FB-867E-4130-A7FF-E6A2A96AE77B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,12 +52,17 @@ Global
 		{B1D71B3E-E1AD-43E1-A6E9-B531342918DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1D71B3E-E1AD-43E1-A6E9-B531342918DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1D71B3E-E1AD-43E1-A6E9-B531342918DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC33C4FB-867E-4130-A7FF-E6A2A96AE77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC33C4FB-867E-4130-A7FF-E6A2A96AE77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC33C4FB-867E-4130-A7FF-E6A2A96AE77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC33C4FB-867E-4130-A7FF-E6A2A96AE77B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C9AFC2A8-41E3-4DC1-AF75-EB41B2B01C6F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{CC33C4FB-867E-4130-A7FF-E6A2A96AE77B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6C48720-9C58-4DDC-9C0C-9C7DD60D7173}
