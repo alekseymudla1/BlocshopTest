@@ -1,4 +1,5 @@
 ﻿using BlocshopTest.Domain.Events.Services;
+using BlocshopTest.Domain.Holds.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,7 @@ public static class DomainServiceCollectionExtension
     {
         // Add domain services here in the future
         services.AddTransient<IEventsService, EventsService>();
+        services.AddTransient<IHoldsService, HoldsService>();
         return services;
     }
 }

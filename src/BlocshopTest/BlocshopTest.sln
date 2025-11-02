@@ -17,10 +17,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocshopTest.Domain.Tests", "BlocshopTest.Domain.Tests\BlocshopTest.Domain.Tests.csproj", "{C9AFC2A8-41E3-4DC1-AF75-EB41B2B01C6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-	ProjectSection(SolutionItems) = preProject
-		docker-compose.yml = docker-compose.yml
-		Dockerfile = Dockerfile
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlocshopTest.Cache", "BlocshopTest.Cache\BlocshopTest.Cache.csproj", "{B1D71B3E-E1AD-43E1-A6E9-B531342918DD}"
 EndProject

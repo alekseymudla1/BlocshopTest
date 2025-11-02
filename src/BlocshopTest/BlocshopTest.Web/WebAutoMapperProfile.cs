@@ -25,6 +25,7 @@ public class WebAutoMapperProfile : Profile
 
     private void CreataHoldMappings()
     {
-        CreateMap<Hold, CreatedHoldDto>();
+        CreateMap<Hold, CreatedHoldDto>()
+            .ForMember(dst => dst.HoldId, opt => opt.MapFrom(src => src.Id));
     }
 }

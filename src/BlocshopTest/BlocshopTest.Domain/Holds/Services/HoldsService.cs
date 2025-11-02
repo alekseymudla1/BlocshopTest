@@ -23,7 +23,7 @@ public class HoldsService : IHoldsService
             EventId = createHold.EventId,
             CustomerId = createHold.CustomerId,
             Seats = createHold.Seats,
-            ExpiredAt = DateTimeOffset.UtcNow.AddMinutes(_holdingSettings.ExpirationInterval)
+            ExpiresAt = DateTimeOffset.UtcNow.AddMinutes(_holdingSettings.ExpirationInterval)
         };
         hold = await _holdsCache.SaveHold(hold);
         return hold;

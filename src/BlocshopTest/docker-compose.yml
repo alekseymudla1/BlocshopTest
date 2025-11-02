@@ -5,12 +5,22 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:8080"
-      - "8081:443"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=mydatabase;Username=myuser;Password=mypassword
+      - ConnectionStrings__Redis=redis:6379
     depends_on:
       - db
+      - redis
+
+  redis:
+    image: redis:7
+    container_name: redis_blocshop
+    ports:
+      - "6389:6379"
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--appendonly", "yes"]
 
   db:
     image: postgres:latest
@@ -25,3 +35,4 @@ services:
 
 volumes:
   db_data:
+  redis_data:

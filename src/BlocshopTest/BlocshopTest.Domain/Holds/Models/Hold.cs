@@ -7,5 +7,5 @@ public class Hold
     public Guid EventId { get; set; }
     public Guid CustomerId { get; set; }
     public int Seats { get; set; }
-    public DateTimeOffset ExpiredAt { get; set; }
+    public DateTimeOffset ExpiresAt { get; set; }
 }
